@@ -1,0 +1,63 @@
+.cardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-left: 3px solid var(--card-accent);
+  min-height: 200px;
+  opacity: 0;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardIcon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--card-accent) 40%, transparent));
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cardBody {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.cardFooter {
+  padding-top: 8px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.viewMore {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--card-accent);
+  transition: letter-spacing var(--transition-fast);
+}
+
+.card:hover .viewMore {
+  letter-spacing: 0.04em;
+}
+
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}

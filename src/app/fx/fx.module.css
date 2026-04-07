@@ -1,0 +1,272 @@
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.pageHeader {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.headerLeft {
+  flex: 1;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.fxLayout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.pairRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.pairBtn {
+  padding: 8px 18px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pairBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.pairActive {
+  background: rgba(255, 209, 102, 0.12) !important;
+  border-color: rgba(255, 209, 102, 0.3) !important;
+  color: var(--accent-yellow) !important;
+}
+
+.chartCard {
+  padding: 28px;
+}
+
+.chartTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.localCard {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(255, 209, 102, 0.05), rgba(0, 0, 0, 0));
+}
+
+.localHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.localLabel {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--accent-yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.localCurrency {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.localSecondary {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.localStats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.localStatItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.statPair { font-weight: 600; color: var(--text-muted); }
+.statVal { font-weight: 700; color: var(--text-primary); }
+
+/* --- Liquidity Matrix --- */
+.matrixCard {
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.matrixWrapper {
+  overflow-x: auto;
+}
+
+.matrixTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.matrixTh {
+  text-align: left;
+  padding: 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.matrixRow:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.matrixCell {
+  padding: 16px 12px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.rowBase {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cellValue {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.pos { color: var(--accent-cyan); }
+.neg { color: var(--accent-red); }
+
+/* --- Converter Widget --- */
+.converterCard {
+  padding: 28px;
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.converterHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.converterInputRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.convInput {
+  background: transparent;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  width: 140px;
+  outline: none;
+}
+
+.convUnit {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-yellow);
+}
+
+.convArrow {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+}
+
+.convResultColumn {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.convResultItem {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.convResLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.convResValue {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+@media (max-width: 1000px) {
+  .fxLayout {
+    grid-template-columns: 1fr;
+  }
+  .converterCard {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .fxLayout {
+    grid-template-columns: 1fr;
+  }
+}

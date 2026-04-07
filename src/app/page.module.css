@@ -1,0 +1,160 @@
+.main {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero */
+.hero {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 24px 40px;
+}
+
+.heroContent {
+  max-width: 640px;
+}
+
+.heroTitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--text-primary) 40%, var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.15;
+}
+
+.heroSub {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 8px;
+  -webkit-text-fill-color: var(--text-muted);
+  letter-spacing: 0;
+}
+
+.heroDesc {
+  margin-top: 16px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+/* Grid */
+.grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+/* Metric displays */
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metricValue {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.metricLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.metricDetail {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.emptyMetric {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 12px 0;
+  line-height: 1.4;
+}
+
+/* Quake list */
+.quakeList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quakeItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quakeMag {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  min-width: 50px;
+}
+
+.quakePlace {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Rate list */
+.rateList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 12px;
+}
+
+.rateItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.rateCurrency {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rateValue {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent-yellow);
+}
+
+/* Footer */
+.footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--glass-border);
+}
+
+@media (max-width: 800px) {
+  .heroTitle { font-size: 2rem; }
+  .grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; gap: 4px; }
+}
