@@ -13,10 +13,12 @@
   <a href="#"><img src="https://img.shields.io/badge/Coverage-128,412_Settlements-ef476f?style=flat-square" alt="Coverage" /></a>
   <a href="#"><img src="https://img.shields.io/badge/AI-Sentient_Kernel-ffd166?style=flat-square" alt="AI" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Sources-15+_Vectors-118ab2?style=flat-square" alt="Sources" /></a>
+  <a href="https://signalcity.vercel.app"><img src="https://img.shields.io/badge/Live_Demo-▶_signalcity.vercel.app-black?style=flat-square&logo=vercel" alt="Live Demo" /></a>
   <a href="#"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square" alt="PRs" /></a>
 </p>
 
 <p align="center">
+  <a href="https://signalcity.vercel.app"><strong>🔴 Live Demo</strong></a> •
   <a href="#-the-sentient-architecture">Sentient AI</a> •
   <a href="#-core-modules">Modules</a> •
   <a href="#-intelligence-source-registry">Sources</a> •
