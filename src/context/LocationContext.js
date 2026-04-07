@@ -17,20 +17,50 @@ export function LocationProvider({ children }) {
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem('pulse_city_data');
-    if (saved) {
-      try {
-        setActiveCity(JSON.parse(saved));
-      } catch (e) {
-        console.error('Failed to load saved city');
+    // 1. Initial hydration from URL params (Priority #1)
+    const params = new URLSearchParams(window.location.search);
+    const urlCity = params.get('city');
+    const urlLat = params.get('lat');
+    const urlLon = params.get('lon');
+
+    if (urlCity && urlLat && urlLon) {
+      const cityData = {
+        name: urlCity,
+        lat: parseFloat(urlLat),
+        lon: parseFloat(urlLon),
+        timezone: params.get('tz') || 'UTC',
+        country: params.get('country') || ''
+      };
+      setActiveCity(cityData);
+      localStorage.setItem('pulse_city_data', JSON.stringify(cityData));
+    } else {
+      // 2. Hydration from LocalStorage (Priority #2)
+      const saved = localStorage.getItem('pulse_city_data');
+      if (saved) {
+        try {
+          setActiveCity(JSON.parse(saved));
+        } catch (e) {
+          console.error('Failed to load saved city');
+        }
       }
     }
+    
     setIsHydrated(true);
   }, []);
 
   const changeCity = (cityData) => {
     setActiveCity(cityData);
     localStorage.setItem('pulse_city_data', JSON.stringify(cityData));
+    
+    // Synchronize URL for shareability
+    const url = new URL(window.location.href);
+    url.searchParams.set('city', cityData.name);
+    url.searchParams.set('lat', cityData.lat);
+    url.searchParams.set('lon', cityData.lon);
+    url.searchParams.set('tz', cityData.timezone);
+    url.searchParams.set('country', cityData.country);
+    
+    window.history.pushState({}, '', url.toString());
   };
 
   const detectLocation = async () => {
