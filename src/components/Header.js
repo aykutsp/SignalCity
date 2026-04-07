@@ -7,12 +7,13 @@ import styles from './Header.module.css';
 
 const NAV_ITEMS = [
   { href: '/', label: 'Dashboard', icon: '◉' },
+  { href: '/consciousness', label: 'Sentient', icon: '👁️' },
   { href: '/planetary', label: 'Tactical', icon: '🛰️' },
   { href: '/weather', label: 'Weather', icon: '☀️' },
   { href: '/quake', label: 'Quake', icon: '🌍' },
   { href: '/stress', label: 'Stress', icon: '💠' },
   { href: '/fx', label: 'FX', icon: '💱' },
-  { href: '/intelligence', label: 'Intelligence', icon: '📜' },
+  { href: '/intelligence', label: 'Sources', icon: '📜' },
 ];
 
 export default function Header() {

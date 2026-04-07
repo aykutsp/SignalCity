@@ -1,0 +1,286 @@
+.main {
+  min-height: 100vh;
+  padding: 100px 32px 48px 32px;
+  background: #050810;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.gridBg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 50% 30%, rgba(239, 71, 111, 0.03) 0%, transparent 60%),
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  pointer-events: none;
+}
+
+/* ─── Heartbeat Section ─── */
+.heartbeatSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.heartbeatOrb {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbInner {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.4) 100%);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--pulse-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 60px color-mix(in srgb, var(--pulse-color) 30%, transparent);
+  animation: orbBreathe var(--pulse-speed) ease-in-out infinite;
+}
+
+.orbScore {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--pulse-color);
+  line-height: 1;
+}
+
+.orbLabel {
+  font-size: 0.5rem;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.15em;
+  margin-top: 4px;
+}
+
+.orbRing, .orbRing2 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--pulse-color);
+  opacity: 0.15;
+  animation: ringExpand var(--pulse-speed) ease-out infinite;
+}
+
+.orbRing { width: 160px; height: 160px; }
+.orbRing2 { width: 180px; height: 180px; animation-delay: calc(var(--pulse-speed) * 0.5); }
+
+@keyframes orbBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(var(--pulse-scale)); }
+}
+
+@keyframes ringExpand {
+  0% { transform: scale(1); opacity: 0.2; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.phaseInfo {
+  text-align: center;
+}
+
+.phaseBadge {
+  display: inline-block;
+  padding: 6px 20px;
+  border: 2px solid;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+
+.phaseDesc {
+  color: #64748b;
+  font-size: 0.95rem;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─── Mid Grid: Domains + History ─── */
+.midGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.domainCard, .historyCard, .neuralCard, .chainsCard {
+  padding: 24px;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+.domainBars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.domainRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.domainName {
+  width: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: capitalize;
+}
+
+.barTrack {
+  flex: 1;
+  height: 8px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease, background 1s ease;
+}
+
+.domainVal {
+  width: 36px;
+  text-align: right;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #e2e8f0;
+}
+
+.historySvg {
+  width: 100%;
+  height: 120px;
+}
+
+/* ─── Bottom Grid: Logs + Chains ─── */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.logScroll, .chainScroll {
+  max-height: 340px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.logEntry {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  animation: logFade 0.4s ease-out;
+}
+
+@keyframes logFade {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logTime {
+  font-size: 0.65rem;
+  font-family: 'Courier New', monospace;
+  color: #475569;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.logMsg {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.noChains {
+  color: #334155;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.chainItem {
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border-left: 3px solid;
+  background: rgba(0,0,0,0.2);
+  animation: logFade 0.4s ease-out;
+}
+
+.chainItem.critical { border-color: #ef476f; }
+.chainItem.warning { border-color: #ffd166; }
+.chainItem.info { border-color: #118ab2; }
+
+.chainTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.chainType {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.chainSev {
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.chainSev.critical { background: rgba(239,71,111,0.15); color: #ef476f; }
+.chainSev.warning { background: rgba(255,209,102,0.15); color: #ffd166; }
+.chainSev.info { background: rgba(17,138,178,0.15); color: #118ab2; }
+
+.chainMsg {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .midGrid, .bottomGrid { grid-template-columns: 1fr; }
+}

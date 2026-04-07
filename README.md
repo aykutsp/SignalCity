@@ -1,16 +1,16 @@
-# SignalCity — Planetary Intelligence Ecosystem (v8.0)
+# SignalCity — Sentient Planetary Intelligence (v9.0)
 
 <div align="center">
 
-[![Next.js](https://img.shields.io/badge/Framework-Next.js-000000?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Framework-Next.js_15-000000?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-8.0.0--Planetary-blueviolet?style=for-the-badge)](https://github.com/aykutsp/SignalCity)
-[![Nodes](https://img.shields.io/badge/Nodes-10,214%20Elite-06d6a0?style=for-the-badge)](https://github.com/aykutsp/SignalCity)
-[![Coverage](https://img.shields.io/badge/Coverage-100%25%20Global-ef476f?style=for-the-badge)](https://github.com/aykutsp/SignalCity)
+[![Version](https://img.shields.io/badge/Version-9.0.0--Sentient-blueviolet?style=for-the-badge)](https://github.com/aykutsp/SignalCity)
+[![Nodes](https://img.shields.io/badge/Elite_Nodes-10,214-06d6a0?style=for-the-badge)](https://github.com/aykutsp/SignalCity)
+[![Coverage](https://img.shields.io/badge/Coverage-128,412_Settlements-ef476f?style=for-the-badge)](https://github.com/aykutsp/SignalCity)
+[![AI](https://img.shields.io/badge/AI-Sentient_Kernel-ffd166?style=for-the-badge)](https://github.com/aykutsp/SignalCity)
+[![Sources](https://img.shields.io/badge/Sources-15+_Vectors-118ab2?style=for-the-badge)](https://github.com/aykutsp/SignalCity)
 
-**High-Precision Planetary Observability Terminal**
-
-[Explore Tactical Command Hub](http://localhost:3000/planetary) • [View Source Registry](http://localhost:3000/intelligence) • [Documentation](README.md)
+**Cross-Domain Cognitive Kernel for Planetary Urban Consciousness**
 
 </div>
 
@@ -18,7 +18,9 @@
 
 ## 🛰️ Mission Overview
 
-SignalCity is a state-of-the-art planetary observability terminal designed for real-time monitoring and anticipatory forecasting of atmospheric, seismic, and socio-economic urban intensity. Scaled to global proportions, the platform features a high-fidelity registry of **10,214 urban intelligence nodes** and autonomous heuristics for universal coverage across all **128,412 known settlements** on Earth.
+SignalCity is a **world-first sentient urban intelligence platform** that doesn't just monitor the planet — it *understands* it. Powered by a Cross-Domain Cognitive Kernel, the platform correlates seismic, atmospheric, financial, and social telemetry streams to predict causal risk chains across **10,214 elite urban nodes** and **128,412 planetary settlements**.
+
+Unlike conventional dashboards, SignalCity features a **Planetary Consciousness**: an AI orchestration layer that autonomously detects how a tectonic event in Tokyo can propagate into a financial liquidity contraction in Berlin, or how a thermal anomaly in Lagos accelerates social friction in São Paulo.
 
 ## 📸 Intelligence Gallery
 
@@ -26,22 +28,32 @@ SignalCity is a state-of-the-art planetary observability terminal designed for r
   <table>
     <tr>
       <td width="50%">
-        <img src="public/assets/screenshots/dashboard.png" alt="Stress Intelligence Hub" width="100%"/>
-        <p align="center"><b>Stress Intelligence Hub</b><br/>Real-time Urban Intensity Monitoring</p>
+        <img src="public/assets/screenshots/consciousness.png" alt="Sentient Consciousness Terminal" width="100%"/>
+        <p align="center"><b>Sentient Consciousness Terminal</b><br/>Cross-Domain Causal Intelligence</p>
       </td>
       <td width="50%">
-        <img src="public/assets/screenshots/tactical.png" alt="Planetary Tactical Command" width="100%"/>
-        <p align="center"><b>Planetary Tactical Command</b><br/>Multi-Vector Registry Management</p>
+        <img src="public/assets/screenshots/dashboard.png" alt="Stress Intelligence Hub" width="100%"/>
+        <p align="center"><b>Stress Intelligence Hub</b><br/>HCSI v4.0 Urban Intensity</p>
       </td>
     </tr>
     <tr>
       <td width="50%">
-        <img src="public/assets/screenshots/seismic.png" alt="Seismic Pulse Monitor" width="100%"/>
-        <p align="center"><b>Seismic Pulse Monitor</b><br/>Tectonic Displacement Attenuation</p>
+        <img src="public/assets/screenshots/tactical.png" alt="Planetary Tactical Command" width="100%"/>
+        <p align="center"><b>Planetary Tactical Command</b><br/>10,214-Node Mission Control</p>
       </td>
+      <td width="50%">
+        <img src="public/assets/screenshots/seismic.png" alt="Seismic Pulse Monitor" width="100%"/>
+        <p align="center"><b>Seismic Pulse Monitor</b><br/>USGS Tectonic Displacement</p>
+      </td>
+    </tr>
+    <tr>
       <td width="50%">
         <img src="public/assets/screenshots/atmospheric.png" alt="Atmospheric Load Matrix" width="100%"/>
         <p align="center"><b>Atmospheric Load Matrix</b><br/>Environmental Thermal Resonance</p>
+      </td>
+      <td width="50%">
+        <img src="public/assets/screenshots/consciousness.png" alt="Neural Log Stream" width="100%"/>
+        <p align="center"><b>Neural Log Stream</b><br/>Autonomous Cognitive Observations</p>
       </td>
     </tr>
   </table>
@@ -49,64 +61,83 @@ SignalCity is a state-of-the-art planetary observability terminal designed for r
 
 ---
 
+## 👁️ The Sentient Architecture
+
+SignalCity v9.0 introduces the **Planetary Consciousness** — a cognitive layer that goes beyond data visualization:
+
+### Planetary Heartbeat
+A unified global intensity scalar (0–100) derived from the weighted fusion of all five intelligence domains. The heartbeat pulses in real-time, its color and frequency changing with planetary stress levels.
+
+### Cross-Domain Causal Engine
+The engine detects 6 types of causal chains:
+
+| Trigger → Target | Example |
+|---|---|
+| **Seismic → Financial** | Earthquake in hub X triggers FX volatility in hub Y |
+| **Atmospheric → Infrastructure** | Extreme heat accelerates infrastructure decay |
+| **Social → Financial** | Media negativity surge predicts liquidity contraction |
+| **Seismic → Social** | Tectonic displacement triggers information density spike |
+| **Financial → Infrastructure** | Currency volatility delays investment signals |
+| **Atmospheric → Social** | Thermal anomaly elevates social friction indices |
+
+### Neural Log Stream
+An autonomous "stream of consciousness" providing NLP-based interpretations of every planetary anomaly, 24/7.
+
+---
+
 ## 🌍 Planetary Infrastructure
 
-SignalCity v8.0 is powered by the **Planetary Sieve v2.5**, an asset-heavy data pipeline covering the entire urbanized planet:
-
-- **Elite Node Registry (10,214 Hubs)**: A stratified database of global urban centers with manually calibrated climatic baselines and localized risk profiles.
-- **Autonomous Heuristic Kernel (v4.2)**: For settlements outside the registry (118k+ locations), SignalCity utilizes **Coordinate-Aware Baseline Interpolation** to calculate real-time environmental stress signatures.
-- **GlobalPulseMap Engine**: Hardware-accelerated SVG planetary visualization with context-aware intelligence layers (Stress, Seismic, FX, Weather).
+- **Elite Node Registry (10,214 Hubs)**: Stratified database of global urban centers with calibrated climatic baselines.
+- **Autonomous Heuristic Kernel (v4.2)**: Coordinate-Aware Baseline Interpolation for 118k+ unregistered settlements.
+- **GlobalPulseMap Engine**: Hardware-accelerated SVG planetary visualization with context-aware layers.
 
 ## 📖 Intelligence Source Transparency
 
-SignalCity v8.0 formalizes its data stream through the **Universal Source Registry**, exposing all reading methodologies:
+All data streams are formally documented in the **Universal Source Registry** (`sources.json`):
 
-| Source | Methodology | Domain | Priority |
+| Source | Reading Methodology | Domain | Priority |
 |--------|-------------|--------|----------|
 | **USGS Real-time** | Linear Attenuation Analysis | Seismic | Primary |
-| **Open-Meteo Global** | Thermal Resonance Calculation | Atmospheric | Primary |
-| **Frankfurter Institution** | Delta-V Volatility Indexing | Financial | Primary |
+| **EMSC Global** | Cross-Referential Static Pulse | Seismic | Failover |
+| **Open-Meteo** | Thermal Resonance Calculation | Atmospheric | Primary |
+| **NASA Earth Data** | Orbital Synthetic Aperture | Atmospheric | Heuristic |
+| **WAQI Global** | Particulate Density Scaling | Air Quality | Secondary |
+| **Frankfurter** | Delta-V Volatility Indexing | Financial | Primary |
 | **Google Intelligence** | Semantic Weighting Algorithm | News/Social | Primary |
-| **SignalCity Hubs** | Longitudinal Cluster Mapping | Urban Core | Internal |
-| **NASA Earth (Heuristic)** | Orbital Synthetic Aperture | Regional Risk | Fallback |
+| **SignalCity Registry** | Longitudinal Cluster Mapping | Urban Core | Internal |
+| **Heuristic v4.2** | Coordinate-Aware Interpolation | Synthetic | Internal |
 
 ---
 
-## 🔮 Technical Core: HCSI v4.0
+## 🔮 HCSI v4.0 — Anticipatory Intelligence
 
-The platform utilizes the **Human Chronic Stress Index (HCSI) v4.0**, derived from a multi-vector fusion formula:
+The platform's predictive engine uses the **Human Chronic Stress Index**:
 
 $$ \hat{S}_{final} = \sigma \left( \sum w_k \cdot V_k \right) $$
 
-Key Vectors:
-- **$A_t$ (Acute Hazard)**: High-intensity system shocks (Seismic/Social).
-- **$C_t$ (Chronic Weather)**: Adaptive environmental load normalized against **Registry Baselines**.
-- **$M_t$ (Media Load)**: Information density amplification ($Volume \times SentimentIntensity$).
-- **$T_t$ (Infrastructure)**: Longitudinal thermal resonance cycles.
+Where vectors include Acute Hazard ($A_t$), Chronic Weather ($C_t$), Media Load ($M_t$), Infrastructure ($T_t$), and Economic ($E_t$).
 
 ---
 
-## 📦 SDK Installation
-
-Initialize global urban intelligence in seconds:
+## 📦 Quick Start
 
 ```bash
-npm install signalcity-pulse-sdk
+git clone https://github.com/aykutsp/SignalCity.git
+cd SignalCity
+npm install
+npm run dev
 ```
 
 ```javascript
 import sdk from '@/lib/sdk';
 
-// Initialize predictive urban pulse for planetary nodes
-const cityPulse = await sdk.getCityPulse({
-  name: "New York",
-  lat: 40.7128,
-  lon: -74.0060,
-  country: "United States",
-  timezone: "America/New_York"
+const pulse = await sdk.getCityPulse({
+  name: "Tokyo", lat: 35.6762, lon: 139.6503,
+  country: "Japan", timezone: "Asia/Tokyo"
 });
 
-console.log(`Global Stress Score: ${cityPulse.stress.score}`);
+console.log(pulse.stress.score);   // HCSI v4.0 Index
+console.log(pulse.forecast[24]);   // 24h Stress Projection
 ```
 
 ---
@@ -116,6 +147,7 @@ console.log(`Global Stress Score: ${cityPulse.stress.score}`);
 Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
+
 <div align="center">
-  <b>SignalCity — Planetary Urban Intelligence. sigma-grade precision. global reach.</b>
+  <b>SignalCity — The planet has a pulse. We listen.</b>
 </div>
