@@ -104,6 +104,38 @@ class PulseSDK {
     formatQuakeTime,
     scoreNews,
   }
+
+  /**
+   * Scans a sample of the planetary registry to identify current risk leaders.
+   */
+  async getGlobalRiskLeaders() {
+    // In a real scenario, this would query a real-time analytics backend.
+    // For SignalCity, we simulate the planetary scan by sampling the elite hub database.
+    const hubs = [
+      "Tokyo", "New York", "London", "Paris", "Berlin", "Dubai", 
+      "Singapore", "Mumbai", "Mexico City", "São Paulo", "Lagos", 
+      "Sydney", "Istanbul", "Seoul", "Jakarta"
+    ];
+    
+    return hubs
+      .map(name => ({
+        name,
+        score: Math.floor(Math.random() * 40) + 30, // Simulated stress baseline
+        status: Math.random() > 0.8 ? 'ALARM' : 'NOMINAL'
+      }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 10);
+  }
+
+  /**
+   * Generates a synthetic planetary tension trajectory for the mission control chart.
+   */
+  getPlanetaryTrend() {
+    return Array.from({ length: 20 }, (_, i) => ({
+      time: i,
+      value: 40 + Math.sin(i / 3) * 10 + Math.random() * 5
+    }));
+  }
 }
 
 export const sdk = new PulseSDK();

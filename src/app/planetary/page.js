@@ -14,6 +14,9 @@ const TACTICAL_REGIONS = [
 
 export default function PlanetaryCommand() {
   const [tickerIndex, setTickerIndex] = useState(0);
+  const [riskLeaders, setRiskLeaders] = useState([]);
+  const [trend, setTrend] = useState([]);
+  
   const tickers = [
     "SEISMIC: M5.2 Detected Near Tokyo - Delta Attenuation Active",
     "LIQUIDITY: TRY Volatility Peak - SignalCity Liquidity Vectors Synchronizing",
@@ -23,11 +26,31 @@ export default function PlanetaryCommand() {
   ];
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    async function init() {
+      const leaders = await sdk.getGlobalRiskLeaders();
+      setRiskLeaders(leaders);
+      setTrend(sdk.getPlanetaryTrend());
+    }
+    init();
+
+    const tickerTimer = setInterval(() => {
       setTickerIndex((prev) => (prev + 1) % tickers.length);
     }, 5000);
-    return () => clearInterval(timer);
+
+    const refreshTimer = setInterval(async () => {
+      const leaders = await sdk.getGlobalRiskLeaders();
+      setRiskLeaders(leaders);
+      setTrend(sdk.getPlanetaryTrend());
+    }, 10000);
+
+    return () => {
+      clearInterval(tickerTimer);
+      clearInterval(refreshTimer);
+    };
   }, [tickers.length]);
+
+  // SVG Chart Logic
+  const chartPoints = trend.map((p, i) => `${(i / trend.length) * 100},${100 - p.value}`).join(' ');
 
   return (
     <>
@@ -58,27 +81,47 @@ export default function PlanetaryCommand() {
           {/* Main Tactical Map View */}
           <div className={styles.mapSection}>
             <GlobalPulseMap mode="stress" />
+            
+            {/* New: Planetary Pulse Chart Overlay */}
+            <div className={`glass ${styles.chartOverlay}`}>
+              <div className={styles.chartHeader}>
+                 <span className={styles.chartTitle}>Planetary Tension Pulse</span>
+                 <span className={styles.chartValue}>AVG: {(trend.reduce((a,b)=>a+b.value,0)/20 || 0).toFixed(1)}</span>
+              </div>
+              <svg viewBox="0 0 100 60" className={styles.trendSvg}>
+                <polyline
+                  fill="none"
+                  stroke="#ef476f"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  points={chartPoints}
+                />
+              </svg>
+            </div>
           </div>
 
           {/* Hub Status Matrix */}
           <div className={styles.sidebar}>
             <div className={`glass ${styles.matrixCard}`}>
-              <h3 className={styles.cardTitle}>Planetary Hub Matrix</h3>
+              <h3 className={styles.cardTitle}>Global Risk Leaders</h3>
               <div className={styles.matrixList}>
-                {TACTICAL_REGIONS.map(region => (
-                  <div key={region.name} className={styles.regionGroup}>
-                    <span className={styles.regionLabel}>{region.name}</span>
-                    <div className={styles.hubGrid}>
-                      {region.hubs.map(hub => (
-                        <div key={hub} className={styles.hubItem}>
-                          <span className={styles.hubName}>{hub}</span>
-                          <span className={styles.hubStatus}>NOMINAL</span>
-                          <div className={styles.hubDot} />
-                        </div>
-                      ))}
+                <div className={styles.hubGrid}>
+                  {riskLeaders.map(hub => (
+                    <div key={hub.name} className={styles.hubItem}>
+                      <div className={styles.hubLeft}>
+                        <span className={styles.hubName}>{hub.name}</span>
+                        <span className={styles.hubScore}>HCSI {hub.score}</span>
+                      </div>
+                      <div className={styles.hubRight}>
+                        <span className={`${styles.hubStatus} ${styles[hub.status.toLowerCase()]}`}>
+                          {hub.status}
+                        </span>
+                        <div className={`${styles.hubDot} ${styles[hub.status.toLowerCase()]}`} />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
