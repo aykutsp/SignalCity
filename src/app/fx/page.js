@@ -8,6 +8,7 @@ import { useLocation } from '@/context/LocationContext';
 import { POPULAR_PAIRS } from '@/lib/api/fx';
 import { getCurrencyByCountry, MAJOR_CURRENCIES } from '@/lib/sdk/currencies';
 import sdk from '@/lib/sdk';
+import GlobalPulseMap from '@/components/GlobalPulseMap';
 import styles from './fx.module.css';
 
 export default function FXPage() {
@@ -120,6 +121,7 @@ export default function FXPage() {
           </div>
         ) : (
           <>
+            <GlobalPulseMap mode="fx" />
             <div className={styles.fxLayout}>
               {/* Chart Side */}
               <div className={styles.chartCol}>

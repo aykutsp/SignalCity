@@ -8,15 +8,24 @@
 import { fetchWeather, getWeatherLabel, getWeatherIcon } from '../api/weather';
 import { fetchQuakes, getMagnitudeColor, getMagnitudeLabel, formatQuakeTime } from '../api/quakes';
 import { fetchRates } from '../api/fx';
-import { computeStress } from '../api/stress';
+import { computeStress, computeStressForecast } from '../api/stress';
 import { fetchNews, scoreNews } from './news';
 import { evaluateCity } from './evaluator';
 import { getIsoByCountry, MAJOR_CURRENCIES, getCurrencyByCountry } from './currencies';
+import sourceRegistry from './sources.json';
 
 class PulseSDK {
   constructor() {
-    this.version = '1.2.0';
-    this.author = 'SignalCity Team';
+    this.version = '8.0.0-Planetary';
+    this.author = 'SignalCity Intelligence';
+    this.registry = sourceRegistry;
+  }
+
+  /**
+   * Returns the formal planetary source registry and methodology.
+   */
+  getSources() {
+    return this.registry.sources;
   }
 
   /**
@@ -42,7 +51,14 @@ class PulseSDK {
       const newsQuery = `${name}, ${country}`;
       const news = await this.getNews(newsQuery, isoCode);
       const newsScore = scoreNews(news);
-      const stress = computeStress(weather, newsScore);
+      const stressOptions = { 
+        cityName: name, 
+        newsVolume: news.length,
+        lat,
+        lon
+      };
+      const stress = computeStress(weather, newsScore, quakes?.features || [], rates?.top || [], stressOptions);
+      const forecast = computeStressForecast(weather, newsScore, quakes?.features || [], rates?.top || [], stressOptions);
       const evaluation = evaluateCity({ weather, stress, quakes, newsScore });
 
       return {
@@ -51,6 +67,7 @@ class PulseSDK {
         rates,
         news,
         stress,
+        forecast,
         newsScore,
         evaluation,
         timestamp: new Date().toISOString()

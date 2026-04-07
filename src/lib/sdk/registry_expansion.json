@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Shanghai",
+    "country": "China",
+    "lat": 31.23,
+    "lon": 121.47,
+    "tz": "Asia/Shanghai",
+    "tempMedian": 25
+  },
+  {
+    "name": "Tokyo",
+    "country": "Japan",
+    "lat": 35.68,
+    "lon": 139.69,
+    "tz": "Asia/Tokyo",
+    "tempMedian": 22
+  },
+  {
+    "name": "Delhi",
+    "country": "India",
+    "lat": 28.61,
+    "lon": 77.2,
+    "tz": "Asia/Kolkata",
+    "tempMedian": 30
+  },
+  {
+    "name": "Mumbai",
+    "country": "India",
+    "lat": 19.07,
+    "lon": 72.87,
+    "tz": "Asia/Kolkata",
+    "tempMedian": 30
+  },
+  {
+    "name": "Beijing",
+    "country": "China",
+    "lat": 39.9,
+    "lon": 116.4,
+    "tz": "Asia/Shanghai",
+    "tempMedian": 22
+  },
+  {
+    "name": "Cairo",
+    "country": "Egypt",
+    "lat": 30.04,
+    "lon": 31.23,
+    "tz": "Africa/Cairo",
+    "tempMedian": 28
+  },
+  {
+    "name": "Dhaka",
+    "country": "Bangladesh",
+    "lat": 23.81,
+    "lon": 90.41,
+    "tz": "Asia/Dhaka",
+    "tempMedian": 30
+  },
+  {
+    "name": "Mexico City",
+    "country": "Mexico",
+    "lat": 19.43,
+    "lon": -99.13,
+    "tz": "America/Mexico_City",
+    "tempMedian": 22
+  },
+  {
+    "name": "Sao Paulo",
+    "country": "Brazil",
+    "lat": -23.55,
+    "lon": -46.63,
+    "tz": "America/Sao_Paulo",
+    "tempMedian": 22
+  },
+  {
+    "name": "Lagos",
+    "country": "Nigeria",
+    "lat": 6.52,
+    "lon": 3.37,
+    "tz": "Africa/Lagos",
+    "tempMedian": 30
+  }
+]

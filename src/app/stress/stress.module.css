@@ -69,6 +69,38 @@
   letter-spacing: 0.08em;
 }
 
+.calibrationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #4fd1c5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin: 1rem auto 0;
+  width: fit-content;
+}
+
+.badgePulse {
+  width: 6px;
+  height: 6px;
+  background: #4fd1c5;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(79, 209, 197, 0.7);
+  animation: pulse-ring 1.5s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(79, 209, 197, 0.7); }
+  70% { transform: scale(1.5); box-shadow: 0 0 0 10px rgba(79, 209, 197, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(79, 209, 197, 0); }
+}
+
 .gaugeDesc {
   font-size: 0.82rem;
   color: var(--text-muted);
@@ -89,52 +121,94 @@
   font-weight: 600;
 }
 
-.infoText {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
+.peakAlert {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.alertIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.alertMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.alertLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.alertValue {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-base);
+}
+
+.alertDesc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 .scaleRow {
   display: flex;
-  gap: 8px;
-  margin-top: auto;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .scaleItem {
-  flex: 1;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  text-align: center;
+  align-items: center;
+  gap: 12px;
 }
 
 .scaleBar {
+  width: 24px;
   height: 6px;
   border-radius: 3px;
 }
 
 .scaleLabel {
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-base);
 }
 
-.scaleRange {
-  font-size: 0.65rem;
-  color: var(--text-muted);
+.forecastCard {
+  padding: 2rem;
+  border-radius: 24px;
+  margin-bottom: 2rem;
 }
 
 .chartCard {
-  padding: 28px;
-  margin-bottom: 24px;
+  padding: 2rem;
+  border-radius: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .chartTitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-base);
   font-weight: 600;
-  margin-bottom: 20px;
-  color: var(--text-primary);
 }
 
 .rawGrid {

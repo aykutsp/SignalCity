@@ -7,8 +7,7 @@
 const COUNTRY_TO_CURRENCY = {
   'United States': 'USD',
   'United Kingdom': 'GBP',
-  'Turkey': 'TRY',
-  'Türkiye': 'TRY',
+  'United States': 'USD',
   'Germany': 'EUR',
   'France': 'EUR',
   'Italy': 'EUR',
@@ -38,8 +37,7 @@ const COUNTRY_TO_CURRENCY = {
 const COUNTRY_TO_ISO = {
   'United States': 'US',
   'United Kingdom': 'GB',
-  'Turkey': 'TR',
-  'Türkiye': 'TR',
+  'United States': 'US',
   'Germany': 'DE',
   'France': 'FR',
   'Italy': 'IT',

@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import ApiLibraryButton from '@/components/ApiLibraryButton';
 import { useLocation } from '@/context/LocationContext';
 import sdk from '@/lib/sdk';
+import GlobalPulseMap from '@/components/GlobalPulseMap';
 import styles from './weather.module.css';
 
 export default function WeatherPage() {
@@ -67,6 +68,7 @@ export default function WeatherPage() {
           </div>
         ) : (
           <>
+            <GlobalPulseMap mode="weather" />
             {/* Current Conditions */}
             <div className={styles.currentGrid}>
               <div className={`glass ${styles.currentMain}`}>

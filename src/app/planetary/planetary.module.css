@@ -1,0 +1,207 @@
+.main {
+  min-height: 100vh;
+  padding: 100px 32px 32px 32px;
+  position: relative;
+  background: #0a0e1a;
+  overflow-x: hidden;
+}
+
+.gridBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(6, 214, 160, 0.1);
+  border: 1px solid rgba(6, 214, 160, 0.3);
+  border-radius: 100px;
+  color: #06d6a0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: #64748b;
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+
+.tickerWrapper {
+  width: 450px;
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border-left: 2px solid #ef476f;
+  border-radius: 0 12px 12px 0;
+  backdrop-filter: blur(10px);
+}
+
+.tickerInner {
+  overflow: hidden;
+}
+
+.tickerLabel {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #ef476f;
+  margin-bottom: 4px;
+  letter-spacing: 0.2em;
+}
+
+.tickerText {
+  color: #f8fafc;
+  font-size: 0.9rem;
+  margin: 0;
+  white-space: nowrap;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.commandGrid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.mapSection {
+  min-height: 600px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.matrixCard, .telemetryCard {
+  padding: 24px;
+}
+
+.cardTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+}
+
+.matrixList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.regionLabel {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 12px;
+  letter-spacing: 0.1em;
+}
+
+.hubGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.hubItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hubName {
+  font-size: 0.85rem;
+  color: #f8fafc;
+}
+
+.hubStatus {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #06d6a0;
+}
+
+.hubDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #06d6a0;
+  box-shadow: 0 0 8px #06d6a0;
+}
+
+.telemetryStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.telItem {
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.telLabel {
+  display: block;
+  font-size: 0.6rem;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.telValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #118ab2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1200px) {
+  .commandGrid {
+    grid-template-columns: 1fr;
+  }
+}

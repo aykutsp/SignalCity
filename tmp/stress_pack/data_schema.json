@@ -1,0 +1,22 @@
+{
+  "timestamp": "datetime",
+  "location": "string",
+  "earthquake": {
+    "magnitude": "float",
+    "distance_km": "float"
+  },
+  "news": {
+    "sentiment": "float",
+    "volume": "int"
+  },
+  "traffic": {
+    "congestion_index": "float"
+  },
+  "weather": {
+    "temperature": "float",
+    "humidity": "float"
+  },
+  "economy": {
+    "volatility_index": "float"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "city": {
+    "name": "string",
+    "country": "string",
+    "lat": "float",
+    "lon": "float",
+    "timezone": "string",
+    "population_tier": "string",
+    "climate_zone": "string",
+    "data_tier": "A|B|C"
+  },
+  "timestamp": "ISO-8601 datetime",
+  "hazards": {
+    "earthquake_count_24h": "float",
+    "max_eq_magnitude_7d": "float",
+    "nearest_eq_distance_km": "float",
+    "decayed_eq_burden": "float",
+    "flood_alert_intensity": "float",
+    "severe_weather_alert_score": "float"
+  },
+  "weather": {
+    "temperature_anomaly_z": "float",
+    "apparent_temperature": "float",
+    "humidity_burden": "float",
+    "nighttime_min_temp_anomaly": "float",
+    "heatwave_days_7d": "float",
+    "wet_bulb_proxy": "float"
+  },
+  "traffic": {
+    "congestion_index": "float",
+    "travel_time_ratio": "float",
+    "commute_reliability_penalty": "float",
+    "delay_percentile": "float"
+  },
+  "media": {
+    "local_negative_news_volume": "float",
+    "disaster_topic_intensity": "float",
+    "uncertainty_topic_intensity": "float",
+    "sentiment_negativity_score": "float"
+  },
+  "economy": {
+    "fx_volatility": "float",
+    "equity_volatility_proxy": "float",
+    "inflation_stress_proxy": "float",
+    "consumer_uncertainty_proxy": "float"
+  },
+  "environment": {
+    "pm25_anomaly": "float",
+    "no2_anomaly": "float",
+    "noise_proxy": "float",
+    "urban_heat_island_proxy": "float",
+    "outage_signal_score": "float"
+  },
+  "meta": {
+    "data_completeness_ratio": "float",
+    "source_diversity_count": "int",
+    "feed_staleness_score": "float"
+  },
+  "labels_optional": {
+    "pss_score": "float",
+    "ema_stress_score": "float"
+  }
+}

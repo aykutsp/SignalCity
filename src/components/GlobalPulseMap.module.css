@@ -1,0 +1,144 @@
+.mapContainer {
+  margin-bottom: 24px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mapHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.mapTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.mapSubtitle {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 4px 0 0 0;
+}
+
+.stats {
+  text-align: right;
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.65rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #06d6a0;
+}
+
+.svgWrapper {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.mapSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pin {
+  transition: transform 0.2s ease;
+}
+
+.pin:hover {
+  transform: scale(1.2);
+}
+
+.pinPoint {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.pulseRing {
+  fill: none;
+  stroke: #06d6a0;
+  stroke-width: 1;
+  opacity: 0;
+  animation: pulse 2s infinite ease-out;
+}
+
+.pinLabel {
+  font-size: 10px;
+  font-weight: 600;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.pin:hover .pinLabel {
+  opacity: 1;
+}
+
+.mapFooter {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.green {
+  background: #06d6a0;
+  box-shadow: 0 0 10px #06d6a0;
+}
+
+.gray {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes pulse {
+  0% {
+    r: 4;
+    opacity: 0.8;
+    stroke-width: 2;
+  }
+  100% {
+    r: 15;
+    opacity: 0;
+    stroke-width: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .pinLabel {
+    display: none;
+  }
+}

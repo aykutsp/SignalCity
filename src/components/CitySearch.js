@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useLocation } from '@/context/LocationContext';
+import registry from '@/lib/sdk/registry';
 import styles from './CitySearch.module.css';
 
 export default function CitySearch() {
@@ -23,7 +24,7 @@ export default function CitySearch() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Debounced search
+  // Registry-Priority Debounced Search
   useEffect(() => {
     if (query.length < 2) {
       setResults([]);
@@ -33,9 +34,25 @@ export default function CitySearch() {
     const timer = setTimeout(async () => {
       setIsSearching(true);
       try {
+        // 1. Search Local Registry (1000+ Pulse Nodes)
+        const localResults = registry.search(query).map(c => ({
+          id: `reg-${c.name}-${c.country}`,
+          name: c.name,
+          latitude: c.lat,
+          longitude: c.lon,
+          country: c.country,
+          timezone: c.tz,
+          isRegistry: true
+        }));
+
+        // 2. Search Global API for non-registry hits
         const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5&language=en&format=json`);
         const data = await res.json();
-        setResults(data.results || []);
+        const apiResults = (data.results || []).filter(apiCity => 
+          !localResults.some(local => local.name.toLowerCase() === apiCity.name.toLowerCase())
+        );
+
+        setResults([...localResults, ...apiResults]);
         setIsOpen(true);
       } catch (e) {
         console.error('Search error:', e);
@@ -66,7 +83,7 @@ export default function CitySearch() {
         <input
           type="text"
           className={styles.input}
-          placeholder={isLocating ? 'Locating...' : (activeCity.name || "Search global cities...")}
+          placeholder={isLocating ? 'Locating...' : (activeCity.name || "Search 1,000+ Pulse Nodes...")}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => query.length >= 2 && setIsOpen(true)}
@@ -84,15 +101,18 @@ export default function CitySearch() {
       {isOpen && (results.length > 0 || isSearching) && (
         <div className={styles.dropdown}>
           {isSearching ? (
-            <div className={styles.loading}>Searching Pulse...</div>
+            <div className={styles.loading}>Searching Pulse Registry...</div>
           ) : (
             results.map((city) => (
               <button
-                key={`${city.id}-${city.name}`}
+                key={city.id || `${city.name}-${city.country}`}
                 className={styles.resultItem}
                 onClick={() => handleSelect(city)}
               >
-                <span className={styles.cityName}>{city.name}</span>
+                <span className={styles.cityName}>
+                  {city.name}
+                  {city.isRegistry && <span className={styles.nodeBadge}>Pulse Node</span>}
+                </span>
                 <span className={styles.cityDetails}>
                   {city.admin1 ? `${city.admin1}, ` : ''}{city.country}
                 </span>

@@ -30,7 +30,7 @@ const SIGNAL_VECTORS = {
 
 export async function fetchNews(city = 'Global', countryIso = 'US') {
   try {
-    // Advanced query: "City, Country" avoids duplicate entities (like Bursa Malaysia)
+    // Advanced query: "City" ensures high-relevance targeting for major urban hubs.
     const query = encodeURIComponent(`${city}`);
     const gl = countryIso.toUpperCase();
     const ceid = `${gl}:en`; 

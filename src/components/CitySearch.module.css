@@ -111,6 +111,21 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nodeBadge {
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  background: rgba(6, 214, 160, 0.15);
+  color: #06d6a0;
+  border: 1px solid rgba(6, 214, 160, 0.3);
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
 }
 
 .cityDetails {

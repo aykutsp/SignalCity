@@ -1,0 +1,94 @@
+{
+  "version": "8.0.0-Planetary",
+  "transparency_protocol": "v2.1",
+  "sources": [
+    {
+      "id": "seismic_primary",
+      "name": "USGS Real-time Monitor",
+      "category": "Seismic",
+      "endpoint": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+      "methodology": "Linear Attenuation Analysis",
+      "description": "Real-time tectonic displacement monitoring with delta-v magnitude calculation.",
+      "polling_ms": 300000,
+      "priority": "Primary"
+    },
+    {
+      "id": "seismic_backup",
+      "name": "EMSC Global Service",
+      "category": "Seismic",
+      "endpoint": "https://www.seismicportal.eu/fdsnws/event/1/query",
+      "methodology": "Cross-Referential Static Pulse",
+      "description": "Secondary verification layer for European and Middle Eastern tectonic sectors.",
+      "polling_ms": 900000,
+      "priority": "Failover"
+    },
+    {
+      "id": "weather_primary",
+      "name": "Open-Meteo Global",
+      "category": "Atmospheric",
+      "endpoint": "https://api.open-meteo.com/v1/forecast",
+      "methodology": "Thermal Resonance Calculation",
+      "description": "High-altitude environmental load monitoring with latitudinal gradient correction.",
+      "polling_ms": 1800000,
+      "priority": "Primary"
+    },
+    {
+      "id": "weather_advanced",
+      "name": "NASA Earth Data (Synthetic)",
+      "category": "Atmospheric",
+      "endpoint": "heuristic://nasa.explorer/v1",
+      "methodology": "Orbital Synthetic Aperture",
+      "description": "Calculates planetary thermal indices for remote settlements using orbital heuristics.",
+      "polling_ms": 7200000,
+      "priority": "Heuristic"
+    },
+    {
+      "id": "air_quality",
+      "name": "WAQI Global Index",
+      "category": "Atmospheric",
+      "endpoint": "https://api.waqi.info/v2/search",
+      "methodology": "Particulate Density Scaling",
+      "description": "Monitoring global AQI levels to calculate environmental urban stress signatures.",
+      "polling_ms": 3600000,
+      "priority": "Secondary"
+    },
+    {
+      "id": "fx_primary",
+      "name": "Frankfurter Institution",
+      "category": "Financial",
+      "endpoint": "https://api.frankfurter.app/latest",
+      "methodology": "Delta-V Volatility Indexing",
+      "description": "Real-time liquidity monitoring for 30+ planetary currencies.",
+      "polling_ms": 600000,
+      "priority": "Primary"
+    },
+    {
+      "id": "news_primary",
+      "name": "Global Intelligence RSS",
+      "category": "Intelligence",
+      "endpoint": "https://news.google.com/rss/search",
+      "methodology": "Semantic Weighting Algorithm",
+      "description": "Real-time NLP-based processing of global urban anomalies and social shocks.",
+      "polling_ms": 900000,
+      "priority": "Primary"
+    },
+    {
+      "id": "registry_core",
+      "name": "SignalCity Urban Registry",
+      "category": "Core",
+      "endpoint": "local://registry.json",
+      "methodology": "Longitudinal Cluster Mapping",
+      "description": "The elite 10,214 hub database used for predictive urban monitoring.",
+      "priority": "Internal"
+    },
+    {
+      "id": "heuristic_engine",
+      "name": "Autonomous Heuristic v4.2",
+      "category": "Core",
+      "endpoint": "local://kernel/hcsi",
+      "methodology": "Coordinate-Aware Baseline Interpolation",
+      "description": "Synthetic sensor generation for 128,412 planetary settlements without direct telemetry.",
+      "priority": "Internal"
+    }
+  ]
+}

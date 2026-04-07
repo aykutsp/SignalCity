@@ -6,11 +6,11 @@ const LocationContext = createContext();
 
 export function LocationProvider({ children }) {
   const [activeCity, setActiveCity] = useState({
-    name: 'San Francisco',
-    lat: 37.7749,
-    lon: -122.4194,
-    timezone: 'America/Los_Angeles',
-    country: 'USA'
+    name: 'New York',
+    lat: 40.7128,
+    lon: -74.0060,
+    timezone: 'America/New_York',
+    country: 'United States'
   });
 
   const [isLoading, setIsLoading] = useState(false);

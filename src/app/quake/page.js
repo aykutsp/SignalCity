@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import ApiLibraryButton from '@/components/ApiLibraryButton';
 import { useLocation } from '@/context/LocationContext';
 import sdk from '@/lib/sdk';
+import GlobalPulseMap from '@/components/GlobalPulseMap';
 import styles from './quake.module.css';
 
 export default function QuakePage() {
@@ -70,6 +71,7 @@ export default function QuakePage() {
           </div>
         ) : (
           <>
+            <GlobalPulseMap mode="seismic" />
             {/* Stats row */}
             <div className={styles.statsRow}>
               <div className={`glass ${styles.statCard}`}>

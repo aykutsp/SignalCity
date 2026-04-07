@@ -1,7 +1,7 @@
-const SF_LAT = 37.7749;
-const SF_LON = -122.4194;
+const NY_LAT = 40.7128;
+const NY_LON = -74.0060;
 
-export async function fetchWeather(lat = SF_LAT, lon = SF_LON) {
+export async function fetchWeather(lat = NY_LAT, lon = NY_LON) {
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,uv_index,surface_pressure&hourly=temperature_2m,weather_code,wind_speed_10m,uv_index,surface_pressure,relative_humidity_2m&forecast_days=2&timezone=auto`;
   const res = await fetch(url, { next: { revalidate: 300 } });
   if (!res.ok) throw new Error('Weather API failed');
