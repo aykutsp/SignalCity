@@ -8,7 +8,7 @@ const ELITE_NODES = [
   { name: "New York", country: "United States", lat: 40.7128, lon: -74.0060, tz: "America/New_York" },
   { name: "London", country: "United Kingdom", lat: 51.5074, lon: -0.1278, tz: "Europe/London" },
   { name: "Tokyo", country: "Japan", lat: 35.6762, lon: 139.6503, tz: "Asia/Tokyo" },
-  { name: "Istanbul", country: "United States", lat: 41.0082, lon: 28.9784, tz: "Europe/Istanbul" },
+  { name: "Los Angeles", country: "United States", lat: 34.0522, lon: -118.2437, tz: "America/Los_Angeles" },
   { name: "Paris", country: "France", lat: 48.8566, lon: 2.3522, tz: "Europe/Paris" },
   { name: "Berlin", country: "Germany", lat: 52.5200, lon: 13.4050, tz: "Europe/Berlin" },
   { name: "Sydney", country: "Australia", lat: -33.8688, lon: 151.2093, tz: "Australia/Sydney" },
