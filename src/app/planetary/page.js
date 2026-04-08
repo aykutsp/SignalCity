@@ -16,13 +16,14 @@ export default function PlanetaryCommand() {
   const [tickerIndex, setTickerIndex] = useState(0);
   const [riskLeaders, setRiskLeaders] = useState([]);
   const [trend, setTrend] = useState([]);
+  const [temporalHorizon, setTemporalHorizon] = useState(0); // 0h to 72h
   
   const tickers = [
-    "SEISMIC: M5.2 Detected Near Tokyo - Delta Attenuation Active",
-    "LIQUIDITY: TRY Volatility Peak - SignalCity Liquidity Vectors Synchronizing",
-    "ATMOSPHERE: Autonomous Heuristic Active for 128,412 settlements",
-    "URBAN STRESS: High Intensity Alert in Paris Grid - Thermal Resonance Rising",
-    "REGISTRY: 10,214 Elite Nodes Connected - Hardware Acceleration v2.5 Enabled"
+    "ORACLE: Predicting T+24h Financial Cascade in Dubai Region",
+    "SHADOW: 85% Convergence for Social Unrest in Lagos (T+12h)",
+    "TEMPORAL: Scrubber Active - Visualizing Future Urban Tension",
+    "PULSE: Heuristic Drift Detected - Reinforcing Bayesian Kernel",
+    "SENTIENT: Autonomous Future Scenarios Enabled for 10,214 Nodes"
   ];
 
   useEffect(() => {
@@ -82,6 +83,29 @@ export default function PlanetaryCommand() {
           <div className={styles.mapSection}>
             <GlobalPulseMap mode="stress" />
             
+            {/* Temporal Scrubber UI */}
+            <div className={styles.temporalScrubber}>
+              <div className={styles.scrubberInfo}>
+                <span className={styles.horizonLabel}>TEMPORAL HORIZON:</span>
+                <span className={styles.horizonValue}>T + {temporalHorizon} HOURS</span>
+              </div>
+              <input 
+                type="range" 
+                min="0" 
+                max="72" 
+                step="1" 
+                value={temporalHorizon}
+                onChange={(e) => setTemporalHorizon(parseInt(e.target.value))}
+                className={styles.scrubberInput}
+              />
+              <div className={styles.scrubberLabels}>
+                <span>NOW</span>
+                <span>T+24H</span>
+                <span>T+48H</span>
+                <span>T+72H</span>
+              </div>
+            </div>
+
             {/* New: Planetary Pulse Chart Overlay */}
             <div className={`glass ${styles.chartOverlay}`}>
               <div className={styles.chartHeader}>

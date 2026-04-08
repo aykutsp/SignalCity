@@ -128,6 +128,23 @@ class PulseSDK {
   }
 
   /**
+   * Performs semantic query against the Neural Lattice (Vector DB).
+   */
+  async searchNeuralLattice(query, topK = 10) {
+    try {
+      const response = await fetch('http://localhost:8011/search', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query, top_k: topK })
+      });
+      return await response.json();
+    } catch (e) {
+      console.warn("Neural Lattice offline. Falling back to local heuristic.", e);
+      return [];
+    }
+  }
+
+  /**
    * Generates a synthetic planetary tension trajectory for the mission control chart.
    */
   getPlanetaryTrend() {

@@ -1,0 +1,104 @@
+.papersContainer {
+  min-height: 100vh;
+  background: #fdfdfd; 
+  color: #1a1a1a;
+  font-family: 'Crimson Pro', serif; /* Classic academic serif */
+  padding: 4rem 2rem;
+  line-height: 1.6;
+}
+
+.paperWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 4rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.institutionalHeader {
+  text-align: center;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+.institutionalHeader h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.institutionalHeader p {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.abstractTitle {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.abstractContent {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  text-align: justify;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.formulaBox {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  border-left: 4px solid #1a1a1a;
+  font-size: 1.1rem;
+}
+
+.citationArea {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 2px solid #000;
+}
+
+.citationBox {
+  background: #f1f1f1;
+  padding: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.copyLabel {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.6rem;
+  background: #000;
+  color: #fff;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.navBack {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  color: #000;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-bottom: 1px solid #000;
+}
