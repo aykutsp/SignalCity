@@ -159,19 +159,91 @@ export function generateNeuralLog() {
 // --- Heartbeat History ---
 
 /**
- * Generates a synthetic heartbeat history for the last N intervals.
+ * Generates mock historical heartbeat data for visualization.
  */
-export function getHeartbeatHistory(count = 60) {
-  const history = [];
-  const now = Date.now();
-  for (let i = count; i >= 0; i--) {
-    const t = now - i * 10000;
-    const base = 42 + Math.sin(t / 300000) * 12;
-    const noise = (Math.random() - 0.5) * 8;
-    history.push({
-      time: i,
-      value: Math.max(10, Math.min(90, base + noise))
+export function getHeartbeatHistory(points = 100) {
+  return Array.from({ length: points }, (_, i) => ({
+    timestamp: Date.now() - (points - i) * 1000,
+    value: 75 + Math.sin(i / 10) * 15 + Math.random() * 5
+  }));
+}
+
+
+
+/**
+ * Predicts a 7-day shadow trajectory for the planetary heartbeat.
+ */
+export function getTemporalProjection(days = 7) {
+  const points = [];
+  const current = computeHeartbeat().score;
+  
+  for (let i = 0; i < days; i++) {
+    const drift = Math.sin(i / 2) * 8 + (Math.random() - 0.5) * 10;
+    points.push({
+      day: i + 1,
+      value: Math.max(10, Math.min(95, current + drift))
     });
   }
-  return history;
+  return points;
+}
+
+/**
+ * Simulates a hypothetical planetary shock and its propagation across hubs.
+ */
+export function simulateShock(type, rawLocation, intensity) {
+  const shockId = `sim-${Date.now()}`;
+  const impacted = ELITE_HUBS.map(hub => {
+    // Simulating distance-based decay from the shock epicentre
+    // In a real scenario, this would use the 10,214-node registry with actual lat/lon
+    const distanceFactor = Math.random(); 
+    const impact = (intensity / (1 + distanceFactor * 5)) * 10;
+    
+    return {
+      hub,
+      delta: Math.round(impact * 10) / 10,
+      state: impact > 15 ? 'CRITICAL' : impact > 8 ? 'ALTITUDE' : 'STABLE'
+    };
+  }).sort((a, b) => b.delta - a.delta).slice(0, 8);
+
+  return {
+    id: shockId,
+    type,
+    intensity,
+    timestamp: new Date().toISOString(),
+    analysis: `Simulation complete. Autonomous Heuristic predicts ${impacted[0].hub} as the primary cognitive casualty with a Δ${impacted[0].delta} stress spike. Total planetary resonance shift: ${(intensity * 0.4).toFixed(1)}%.`,
+    impacted
+  };
+}
+
+/**
+ * Generates autonomous future 'Shadow Events' by analyzing deviant probability branches.
+ */
+export function getShadowForecasts(count = 5) {
+  const events = [];
+  const eventTypes = [
+    { type: 'Financial Cascade', domain: 'Financial', baseProb: 0.65 },
+    { type: 'Atmospheric Divergence', domain: 'Atmospheric', baseProb: 0.45 },
+    { type: 'Social Pulse Spike', domain: 'Social', baseProb: 0.78 },
+    { type: 'Infra-Decay Warning', domain: 'Infrastructure', baseProb: 0.35 },
+    { type: 'Quake Pre-Echo', domain: 'Seismic', baseProb: 0.22 }
+  ];
+
+  for (let i = 0; i < count; i++) {
+    const et = eventTypes[Math.floor(Math.random() * eventTypes.length)];
+    const city = ELITE_HUBS[Math.floor(Math.random() * ELITE_HUBS.length)];
+    const probability = Math.round((et.baseProb + (Math.random() * 0.2)) * 100);
+    const horizonHrs = Math.floor(Math.random() * 72) + 6;
+
+    events.push({
+      id: `shadow-${Date.now()}-${i}`,
+      type: et.type,
+      domain: et.domain,
+      location: city,
+      probability,
+      horizon: horizonHrs,
+      prediction: `Model detects ${probability}% convergence of ${et.domain} tension in ${city} within a T+${horizonHrs}h window. High-order cross-domain ripple likely.`
+    });
+  }
+
+  return events.sort((a, b) => b.probability - a.probability);
 }

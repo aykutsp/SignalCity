@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import Header from '@/components/Header';
 import { computeHeartbeat, detectCausalChains, generateNeuralLog, getHeartbeatHistory } from '@/lib/sdk/sentient';
 import styles from './consciousness.module.css';
+import globalHum from '@/lib/sdk/hum';
 
 const MAX_LOGS = 30;
 const MAX_CHAINS = 8;
@@ -13,21 +14,29 @@ export default function ConsciousnessPage() {
   const [logs, setLogs] = useState([]);
   const [chains, setChains] = useState([]);
   const [history, setHistory] = useState([]);
+  const [audioActive, setAudioActive] = useState(false);
   const logRef = useRef(null);
 
   useEffect(() => {
     // Initial state
-    setHeartbeat(computeHeartbeat());
+    const initialHeartbeat = computeHeartbeat();
+    setHeartbeat(initialHeartbeat);
     setHistory(getHeartbeatHistory(60));
     setLogs([generateNeuralLog(), generateNeuralLog(), generateNeuralLog()]);
 
     // Heartbeat pulse: every 2 seconds
     const heartbeatTimer = setInterval(() => {
-      setHeartbeat(computeHeartbeat());
+      const data = computeHeartbeat();
+      setHeartbeat(data);
       setHistory(prev => {
-        const next = [...prev.slice(1), { time: 0, value: computeHeartbeat().score }];
+        const next = [...prev.slice(1), { time: 0, value: data.score }];
         return next.map((p, i) => ({ ...p, time: i }));
       });
+
+      // Update global hum frequency based on pulse if active
+      if (globalHum && audioActive) {
+        globalHum.update(data.score);
+      }
     }, 2000);
 
     // Neural log: every 4 seconds

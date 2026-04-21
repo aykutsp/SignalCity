@@ -1,0 +1,144 @@
+.oracleContainer {
+  min-height: 100vh;
+  background: #020408;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  padding: 2rem;
+  background-image: 
+    linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.oracleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #00f2ff;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.oracleTitle h1 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #00f2ff;
+  letter-spacing: 0.2rem;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+}
+
+.forecastZone {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.predictionCard {
+  background: rgba(10, 15, 25, 0.8);
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.predictionCard:hover {
+  border-color: #00f2ff;
+  transform: translateX(10px);
+  background: rgba(10, 15, 25, 1);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.typeLabel {
+  color: #00f2ff;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.probBadge {
+  background: #00f2ff;
+  color: #000;
+  padding: 2px 8px;
+  font-weight: 900;
+  font-size: 0.7rem;
+}
+
+.cityTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.predictionText {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: #8899a6;
+  line-height: 1.5;
+}
+
+.horizonTag {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  color: #00f2ff;
+  opacity: 0.6;
+}
+
+.statsPane {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.statItem {
+  border-left: 2px solid #00f2ff;
+  padding-left: 1rem;
+}
+
+.statValue {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.statLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: #8899a6;
+}
+
+.timelineVisual {
+  height: 200px;
+  margin-top: auto;
+  position: relative;
+  border-top: 1px dashed rgba(0, 242, 255, 0.2);
+  padding-top: 1rem;
+}
+
+.orbitingDot {
+  width: 10px;
+  height: 10px;
+  background: #00f2ff;
+  border-radius: 50%;
+  position: absolute;
+  filter: blur(2px);
+  animation: orbit 4s linear infinite;
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+}

@@ -31,9 +31,9 @@
 
 ## What is SignalCity?
 
-**SignalCity** is an open-source, real-time planetary intelligence platform that monitors, correlates, and predicts urban stress across the globe. It fuses atmospheric, seismic, financial, and social telemetry from **15+ institutional data sources** into a unified cognitive layer that doesn't just visualize data — it understands causal relationships between global events.
+**SignalCity** is an open-source, real-time planetary intelligence platform that monitors, correlates, and predicts urban stress, anchored by its **New York City flagship node**. It fuses atmospheric, seismic, financial, and social telemetry from **15+ institutional data sources** into a unified cognitive layer that doesn't just visualize data — it understands causal relationships between global events.
 
-The platform tracks **10,214 elite urban nodes** with calibrated baselines and provides autonomous heuristic coverage for all **128,412 known human settlements** on Earth.
+The platform tracks **10,214 elite urban nodes** (led by the New York Primary) with calibrated baselines and provides autonomous heuristic coverage for all **128,412 known human settlements** on Earth.
 
 > **What makes it different?** Most dashboards show you data. SignalCity shows you *why* a currency is crashing by tracing it to an earthquake 8,000 km away, or predicts social unrest from a sustained thermal anomaly. It's a cross-domain causal inference engine, not a chart viewer.
 

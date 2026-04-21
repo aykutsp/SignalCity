@@ -1,0 +1,130 @@
+.simulatorContainer {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #0a0c10 0%, #050608 100%);
+  color: #e0e6ed;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.terminalPanel {
+  background: rgba(15, 18, 24, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 4px;
+}
+
+.titleGroup {
+  border-bottom: 2px solid #00f2ff;
+  padding-bottom: 1rem;
+}
+
+.titleGroup h1 {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  color: #00f2ff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.controlGroup label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #8899a6;
+  letter-spacing: 0.05rem;
+}
+
+.inputField {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.8rem;
+  color: #00f2ff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.injectButton {
+  background: #00f2ff;
+  color: #000;
+  border: none;
+  padding: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+
+.injectButton:hover {
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.4);
+}
+
+.visualizationArea {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.mapPlaceholder {
+  flex: 1;
+  background-image: radial-gradient(rgba(0, 242, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logArea {
+  height: 250px;
+  background: #000;
+  color: #00ff41;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  padding: 1rem;
+  overflow-y: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logLine {
+  margin-bottom: 0.3rem;
+  opacity: 0.8;
+}
+
+.shockPoint {
+  width: 4px;
+  height: 4px;
+  background: #ff4757;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 20px #ff4757;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(30); opacity: 0; }
+}
+
+.temporalChart {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+}

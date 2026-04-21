@@ -1,0 +1,108 @@
+.registryContainer {
+  min-height: 100vh;
+  background: #020408;
+  color: #fff;
+  padding: 100px 2rem 2rem 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.atlasHeader {
+  margin-bottom: 3rem;
+  border-left: 4px solid #00f2ff;
+  padding-left: 1.5rem;
+}
+
+.atlasTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -0.05rem;
+}
+
+.atlasSubtitle {
+  color: #8899a6;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.nodeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.nodeCard {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nodeCard:hover {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(0, 242, 255, 0.4);
+  transform: translateY(-5px);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.countryCode {
+  font-size: 0.7rem;
+  color: #00f2ff;
+  font-weight: 800;
+  background: rgba(0, 242, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.similarityScore {
+  font-size: 0.7rem;
+  color: #06d6a0;
+  font-weight: 700;
+}
+
+.cityName {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.nodeStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.statLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.noResults {
+  text-align: center;
+  padding: 5rem;
+  color: #8899a6;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
